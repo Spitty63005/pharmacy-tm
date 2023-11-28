@@ -1,0 +1,6 @@
+#side-bar, .authenticate-bar{
+    -fx-background-color: linear-gradient( #dc143c, #ffff);
+}
+#top-bar{
+    -fx-background-color: linear-gradient(from 100px 100px to 400px 400px, #dc143c, #ffff);
+}

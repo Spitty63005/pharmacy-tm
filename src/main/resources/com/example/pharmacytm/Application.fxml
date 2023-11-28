@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pharmacytm.Application">
+   <children>
+      <BorderPane prefHeight="400.0" prefWidth="600.0">
+         <left>
+            <AnchorPane id="side-bar" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="44.0" layoutY="266.0" text="Purchace Medicines" />
+                  <Label layoutX="44.0" layoutY="226.0" text="Add Medicine" />
+                  <Label layoutX="44.0" layoutY="185.0" text="Dashboard" />
+                  <Label layoutX="41.0" layoutY="69.0" text="Welcome">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="14.0" layoutY="359.0" prefHeight="17.0" prefWidth="69.0" text="Sign out" />
+               </children>
+            </AnchorPane>
+         </left>
+         <top>
+            <AnchorPane prefHeight="31.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="41.0" layoutY="9.0" text="Tommy Pharamceutical" />
+               </children>
+            </AnchorPane>
+         </top>
+         <right>
+            <AnchorPane prefHeight="369.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane prefHeight="390.0" prefWidth="410.0">
+                     <children>
+                        <AnchorPane prefHeight="190.0" prefWidth="409.0">
+                           <children>
+                              <LineChart layoutX="-1.0" layoutY="-1.0" prefHeight="205.0" prefWidth="390.0" title=" Income Data Chart">
+                                <xAxis>
+                                  <CategoryAxis side="BOTTOM" />
+                                </xAxis>
+                                <yAxis>
+                                  <NumberAxis side="LEFT" />
+                                </yAxis>
+                              </LineChart>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutY="210.0" prefHeight="175.0" prefWidth="409.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="390.0" prefWidth="400.0" visible="false" />
+                  <AnchorPane prefHeight="390.0" prefWidth="400.0" visible="false" />
+               </children>
+            </AnchorPane>
+         </right>
+      </BorderPane>
+   </children>
+</AnchorPane>
