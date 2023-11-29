@@ -13,4 +13,8 @@ public class Authentication
     {
         welcomeText.setText("Welcome to JavaFX Application!");
     }
+
+    static void makeFartSound(int howJuicey){
+        System.out.println("*fart sound* repeated x" + howJuicey );
+    }
 }

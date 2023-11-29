@@ -4,3 +4,14 @@
 #top-bar{
     -fx-background-color: linear-gradient(from 100px 100px to 400px 400px, #dc143c, #ffff);
 }
+
+.item-background{
+    -fx-border-radius: 5px;
+    -fx-padding: 5px;
+    -fx-background-color: #FF66B3;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+}
+
+.stat-box{
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+}
