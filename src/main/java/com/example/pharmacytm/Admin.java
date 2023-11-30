@@ -2,8 +2,8 @@ package com.example.pharmacytm;
 
 public class Admin
 {
-    private int id;
-    private String name;
+    private final int id;
+    private final String name;
 
     public Admin(int id, String name)
     {
