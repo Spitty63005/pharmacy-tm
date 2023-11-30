@@ -1,33 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pharmacytm.Authentication">
    <children>
       <BorderPane prefHeight="400.0" prefWidth="600.0">
          <left>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <AnchorPane prefHeight="369.0" prefWidth="200.0" styleClass="authenticate-bar" stylesheets="@style.css">
+                  <AnchorPane fx:id="login_ap" prefHeight="369.0" prefWidth="200.0" styleClass="authenticate-bar" stylesheets="@style.css">
                      <children>
-                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="283.0" prefHeight="17.0" prefWidth="149.0" text="Login" textAlignment="CENTER" />
-                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="239.0" prefHeight="17.0" prefWidth="148.0" text="Register" textAlignment="CENTER" />
+                        <Button fx:id="login_switchToRegister" layoutX="26.0" layoutY="243.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="151.0" styleClass="btn_look_better" stylesheets="@style.css" text="Register" />
                         <Label alignment="CENTER" layoutX="26.0" layoutY="28.0" prefHeight="84.0" prefWidth="149.0" text="Tommy Pharamcy" />
-                        <TextField layoutX="26.0" layoutY="124.0" promptText="Username" />
-                        <TextField layoutX="26.0" layoutY="200.0" promptText="Password" />
+                        <TextField fx:id="login_username" layoutX="26.0" layoutY="124.0" promptText="Username" />
+                        <TextField fx:id="login_password" layoutX="26.0" layoutY="200.0" promptText="Password" />
+                        <Button fx:id="login_login" layoutX="27.0" layoutY="288.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" styleClass="btn_look_better" stylesheets="@style.css" text="Login" />
                      </children>
                   </AnchorPane>
-                  <AnchorPane prefHeight="369.0" prefWidth="200.0" styleClass="authenticate-bar" stylesheets="@style.css" visible="false">
+                  <AnchorPane disable="true" prefHeight="369.0" prefWidth="200.0" styleClass="authenticate-bar" stylesheets="@style.css" visible="false">
                      <children>
-                        <TextField layoutX="26.0" layoutY="124.0" promptText="Username" />
-                        <TextField layoutX="26.0" layoutY="200.0" promptText="Password" />
-                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="332.0" prefHeight="17.0" prefWidth="149.0" text="Back to Login" textAlignment="CENTER" />
-                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="238.0" prefHeight="17.0" prefWidth="148.0" text="Register" textAlignment="CENTER" />
+                        <Button fx:id="register_register" layoutX="70.0" layoutY="234.0" mnemonicParsing="false" styleClass="btn_look_better" stylesheets="@style.css" text="Register" />
+                        <TextField fx:id="register_username" layoutX="26.0" layoutY="124.0" promptText="Username" />
+                        <TextField fx:id="register_password" layoutX="26.0" layoutY="200.0" promptText="Password" />
                         <Label alignment="CENTER" layoutX="26.0" layoutY="28.0" prefHeight="84.0" prefWidth="149.0" text="Tommy Pharamcy" />
-                        <TextField layoutX="26.0" layoutY="160.0" promptText="Name" />
+                        <TextField fx:id="register_name" layoutX="26.0" layoutY="160.0" promptText="Name" />
+                        <Button layoutX="64.0" layoutY="328.0" mnemonicParsing="false" styleClass="btn_look_better" stylesheets="@style.css" text="Back to Login" />
                      </children>
                   </AnchorPane>
                </children>

@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="261618ae-1dd5-4bc7-9a2e-fc7d69ae4f52" name="Changes" comment="firdt">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pharmacytm/Admin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pharmacytm/Authentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pharmacytm/Authentication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pharmacytm/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pharmacytm/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pharmacytm/Application.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pharmacytm/Application.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pharmacytm/Authenication.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pharmacytm/Authenication.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pharmacytm/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pharmacytm/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,6 +49,26 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.pharmacytm.Main" />
+      <module name="pharmacy-tm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.pharmacytm.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -65,7 +86,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701188584677</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="firdt">
+      <option name="closed" value="true" />
+      <created>1701273705435</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1701273705435</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
