@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.sql.*;
 public class DButils
 {
-    public Admin login(String username, String password, String name) throws SQLException
+    public static Admin login(String username, String password) throws SQLException
     {
         Connection conn = null;
         PreparedStatement preparedStatement = null;
@@ -22,8 +22,9 @@ public class DButils
 
         // SELECT <column name> FROM <table name> WHERE <column matches parameter>)
         conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/banking", "root", "password");
-        preparedStatement = conn.prepareStatement("SELECT * FROM admin WHERE username = ?");
+        preparedStatement = conn.prepareStatement("SELECT * FROM admin WHERE username = ? and pwd = ?");
         preparedStatement.setString(1, username);
+        preparedStatement.setString(2, password);
         resultSet = preparedStatement.executeQuery();
 
         // if user doesn't exist
@@ -41,13 +42,7 @@ public class DButils
             // loop through each record in the result set table
             while (resultSet.next())
             {
-                // store the current password
-                String retrievedPassword = resultSet.getString("pwd");
-
-                return new Admin(username, password, name);
-                // if the current password matches the password submitted
-
-
+                return new Admin(username);
             }
             System.out.println("Passwords did not match!");
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -62,5 +57,32 @@ public class DButils
         conn.close();
         return null;
     }
+
+    public static void loadDashboard(Admin admin) throws IOException
+    {
+        FXMLLoader loader = new FXMLLoader(DButils.class.getResource("Application.fxml"));
+        Parent root = loader.load();
+
+        // CREATE THE STAGE THAT HOLDS THE SCENE
+        Stage stage = new Stage();
+
+        // SET THE TITLE
+        stage.setTitle("Tommy's Pharmacy Dashboard");
+
+        // CREATE THE SCENE AND SET IT ON THE STAGE
+        stage.setScene(new Scene(root, 600, 400));
+
+        // SHOW THE STAGE
+        stage.show();
+    }
 }
+
+
+
+
+
+
+
+
+
 

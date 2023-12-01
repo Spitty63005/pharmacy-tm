@@ -18,7 +18,7 @@ public class Main extends Application
         stage.setScene(scene);
         stage.show();
 
-        Authentication.makeFartSound(8);
+        //Authentication.makeFartSound(8);
     }
 
     public static void main(String[] args)

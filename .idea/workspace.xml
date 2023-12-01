@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="261618ae-1dd5-4bc7-9a2e-fc7d69ae4f52" name="Changes" comment="end of day - day 1">
+    <list default="true" id="261618ae-1dd5-4bc7-9a2e-fc7d69ae4f52" name="Changes" comment="end of day - day 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pharmacytm/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pharmacytm/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pharmacytm/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pharmacytm/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pharmacytm/Authentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pharmacytm/Authentication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pharmacytm/DButils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pharmacytm/DButils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pharmacytm/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pharmacytm/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pharmacytm/Authenication.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pharmacytm/Authenication.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,12 +131,21 @@
       <option name="project" value="LOCAL" />
       <updated>1701367204046</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="end of day - day 2">
+      <option name="closed" value="true" />
+      <created>1701371790737</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1701371790737</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="firdt" />
     <MESSAGE value="end of day - day 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="end of day - day 1" />
+    <MESSAGE value="end of day - day 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="end of day - day 2" />
   </component>
 </project>
