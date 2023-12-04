@@ -1,5 +1,8 @@
 package com.example.pharmacytm;
 
+import javafx.beans.Observable;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
 
 import javafx.event.ActionEvent;
@@ -14,14 +17,24 @@ import java.io.IOException;
 import java.sql.*;
 public class DButils
 {
+
+    public static Connection connectDb()
+    {
+        try{
+            return DriverManager.getConnection("jdbc:mysql://localhost:3306/pharamcy", "root", "password");
+        } catch (SQLException e)
+        {
+            throw new RuntimeException(e);
+        }
+    }
+
     public static Admin login(String username, String password) throws SQLException
     {
-        Connection conn = null;
+        Connection conn = connectDb();
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
 
         // SELECT <column name> FROM <table name> WHERE <column matches parameter>)
-        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/banking", "root", "password");
         preparedStatement = conn.prepareStatement("SELECT * FROM admin WHERE username = ? and pwd = ?");
         preparedStatement.setString(1, username);
         preparedStatement.setString(2, password);
@@ -65,6 +78,7 @@ public class DButils
 
         // CREATE THE STAGE THAT HOLDS THE SCENE
         Stage stage = new Stage();
+        Application.setCurrentUser(admin);
 
         // SET THE TITLE
         stage.setTitle("Tommy's Pharmacy Dashboard");
@@ -75,6 +89,31 @@ public class DButils
         // SHOW THE STAGE
         stage.show();
     }
+
+    public static ObservableList<Medicine> getMedicineList()
+    {
+        String sql = "SELECT * FROM medicine";
+        ObservableList<Medicine> listData = FXCollections.observableArrayList();
+
+        Connection connect = connectDb();
+
+        try{
+            PreparedStatement prepare = connect.prepareStatement(sql);
+            ResultSet result = prepare.executeQuery();
+
+            Medicine medData;
+
+            while(result.next())
+            {
+                // TODO do result.get TYPE (column name) for each column
+                //medData =
+
+                listData.add(medData);
+            }
+        }catch (Exception e){e.printStackTrace();}
+        return listData;
+    }
+
 }
 
 
