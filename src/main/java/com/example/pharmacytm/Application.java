@@ -1,5 +1,6 @@
 package com.example.pharmacytm;
 
+import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
@@ -16,6 +17,7 @@ public class Application implements Initializable
     @FXML
     TableColumn<Medicine, String> med_id, med_brand, med_product, med_type, med_price, med_status, med_date;
     private static Admin currentUser;
+    ObservableList<Medicine> addMedicineList;
 
     public static void setCurrentUser(Admin admin)
     {
@@ -24,7 +26,7 @@ public class Application implements Initializable
 
     public void addMedicine_FillTable()
     {
-//        addMedicineList = DButils.getMedicineList();
+        addMedicineList = DButils.getMedicineList();
 
         med_id.setCellValueFactory(new PropertyValueFactory<>("med_id"));
         med_brand.setCellValueFactory(new PropertyValueFactory<>("med_brand"));
