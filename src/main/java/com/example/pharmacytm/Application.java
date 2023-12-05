@@ -48,7 +48,7 @@ public class Application implements Initializable
 
     /*public void addMedicine_Search()
     {
-        FilteredList<MedicioneData> filteredList = new FilteredList<>(DButils.getMedicineList(), b -> true);
+        FilteredList<Medicine> filteredList = new FilteredList<>(DButils.getMedicineList(), b -> true);
         search_addMedsText.textProperty().addListener((observable, oldValue, newValue) ->
         {
             filteredList.setPredicate(medicineData -> {
@@ -77,7 +77,7 @@ public class Application implements Initializable
         });
 
                 sortedList<MedicineData> sortedList = new SortedList<>(filteredList);
-                sortedList.comparePorperty().bind(addMedicines_table.comparatorProperty());
+                sortedList.compareProperty().bind(addMedicines_table.comparatorProperty());
                 addMedicines_table.setItems(sortedList);
     }*/
 }

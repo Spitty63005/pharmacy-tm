@@ -84,7 +84,7 @@ public class DButils
         stage.setTitle("Tommy's Pharmacy Dashboard");
 
         // CREATE THE SCENE AND SET IT ON THE STAGE
-        stage.setScene(new Scene(root, 600, 400));
+        stage.setScene(new Scene(root, 800, 900));
 
         // SHOW THE STAGE
         stage.show();
@@ -106,7 +106,7 @@ public class DButils
             while(result.next())
             {
                 // TODO do result.get TYPE (column name) for each column
-                //medData =
+                medData = new Medicine(result.getInt("med_id"), result.getString("med_brand"), result.getString("med_date"), result.getString("med_type"), result.getString("med_status"), result.getString("med_product"), result.getDouble("med_price"));
 
                 listData.add(medData);
             }

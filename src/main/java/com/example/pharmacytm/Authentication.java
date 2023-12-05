@@ -1,13 +1,12 @@
 package com.example.pharmacytm;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class Authentication //implements Initializable
@@ -31,6 +30,21 @@ public class Authentication //implements Initializable
        {
            DButils.loadDashboard(admin);
        }
+    }
+
+    public void register() throws InterruptedException
+    {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setContentText("nuh uh");
+        Optional<ButtonType> result = alert.showAndWait();
+        ButtonType button = result.orElse(ButtonType.CANCEL);
+
+        if (button == ButtonType.OK) {
+            System.exit(0);
+        }
+        alert.show();
+
+
     }
 
 }
