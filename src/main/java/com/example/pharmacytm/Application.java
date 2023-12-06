@@ -2,14 +2,11 @@ package com.example.pharmacytm;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.collections.transformation.FilteredList;
-import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
-import org.w3c.dom.Text;
 
 import java.net.URL;
 import java.util.*;
@@ -148,7 +145,7 @@ public class Application implements Initializable
     public void addMedicine_TypeCombo()
     {
         List<String> listS = new ArrayList<>();
-        Collections.addAll(listS, addMedicineStatus);
+        Collections.addAll(listS, addMedicineType);
 
         ObservableList listData = FXCollections.observableArrayList(listS);
         type_addMedsCombo.setItems(listData);
@@ -170,5 +167,76 @@ public class Application implements Initializable
         addMedicine_MedDate.setText(currentMed.getMed_date());
     }
 
+    public void addMedicine_AddtoDatabase()
+    {
+        if(isAllFieldsFilled())
+        {
+            DButils.showAlert(Alert.AlertType.ERROR, "Error Message", "Please Fill out all the fields");
+        }
+        else
+        {
+            DButils.addMedicineToDatabase(addMedicine_MedId.getText(), addMedicine_MedBrand.getText(),
+                    addMedicine_MedProduct.getText(), type_addMedsCombo.getValue(), Double.parseDouble(addMedicine_MedPrice.getText()),
+                    status_addMedsCombo.getValue());
+        }
+        addMedicine_FillTable();
+        addMedicine_clearFields();
+    }
+    public void addMedicine_UpdateDatabase()
+    {
+        if(isAllFieldsFilled())
+        {
+            DButils.showAlert(Alert.AlertType.ERROR, "Error Message", "Please Fill out all the fields");
+        }
+        else
+        {
+            System.out.println(med_price.getText());
+            boolean successs = DButils.updateMedicineInDatabase(addMedicine_MedId.getText(), addMedicine_MedBrand.getText(),
+                    addMedicine_MedProduct.getText(), type_addMedsCombo.getValue(), Double.parseDouble(addMedicine_MedPrice.getText()), status_addMedsCombo.getValue());
+            if(successs)
+            {
+                addMedicine_FillTable();
+                addMedicine_clearFields();
+            }
+        }
+        addMedicine_FillTable();
+        addMedicine_clearFields();
+    }
+
+    public void deleteMedicine_DeleteFromDatabase()
+    {
+        if(isAllFieldsFilled())
+        {
+            DButils.showAlert(Alert.AlertType.ERROR, "Error Message", "Please Fill out all the fields");
+        }
+        else
+        {
+            DButils.removeFromDatabase(Integer.parseInt(addMedicine_MedId.getText()));
+        }
+        addMedicine_FillTable();
+        addMedicine_clearFields();
+    }
+    public boolean isAllFieldsFilled()
+    {
+        return addMedicine_MedId.getText().isEmpty() || addMedicine_MedBrand.getText().isEmpty() ||
+                addMedicine_MedProduct.getText().isEmpty() || type_addMedsCombo.getSelectionModel().getSelectedItem() == null
+                || status_addMedsCombo.getSelectionModel().getSelectedItem() == null || addMedicine_MedPrice.getText().isEmpty();
+    }
+
+    public void addMedicine_clearFields()
+    {
+        addMedicine_MedId.setText("");
+        addMedicine_MedBrand.setText("");
+        addMedicine_MedProduct.setText("");
+        addMedicine_MedPrice.setText("");
+        addMedicine_MedDate.setText("");
+        type_addMedsCombo.getSelectionModel().clearSelection();;
+        status_addMedsCombo.getSelectionModel().clearSelection();;
+
+        type_addMedsCombo.setPromptText("Choose...");
+        status_addMedsCombo.setPromptText("Choose...");
+
+        currentMed = null;
+    }
     // endregion
 }
