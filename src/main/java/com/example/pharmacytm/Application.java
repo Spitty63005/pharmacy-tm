@@ -7,9 +7,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import org.w3c.dom.ls.LSOutput;
 
 import java.net.URL;
 import java.util.*;
+
 
 public class Application implements Initializable
 {
@@ -239,4 +241,9 @@ public class Application implements Initializable
         currentMed = null;
     }
     // endregion
+
+    //region buy medicine
+
+    //endregion
+
 }
