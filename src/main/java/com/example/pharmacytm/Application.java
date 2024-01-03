@@ -1,7 +1,9 @@
 package com.example.pharmacytm;
 
+import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -21,19 +23,26 @@ public class Application implements Initializable
 
     @FXML
     AnchorPane purchase_purchaseMeds, dash_dashboard, med_addMed;
-    private static Admin currentUser;
 
     @FXML
-    private TableView<Medicine> addMedicine_table;
+    private TableView<Medicine> addMedicine_table, buyMedicine_table;
 
     @FXML
     private ComboBox<String> type_addMedsCombo, status_addMedsCombo;
+
+    @FXML
+    private ChoiceBox<String> buyTypeSelection, buyProduct, buyBrand, buyID;
+
+    @FXML
+    private Spinner<Integer> buySpinner;
 
     @FXML
     private TextField addMedicine_MedId, addMedicine_MedBrand, addMedicine_MedProduct, addMedicine_MedPrice, addMedicine_MedDate;
     ObservableList<Medicine> addMedicineList;
 
     Medicine currentMed;
+
+    private static Admin currentUser;
 
     public static void setCurrentUser(Admin admin)
     {
@@ -43,7 +52,18 @@ public class Application implements Initializable
     public static final String[] addMedicineStatus = {"available", "unavailable"};
     public static final String[] addMedicineType = {"Pain Relievers", "Antibiotics", "Cardiovascular", "Metabolic", "Respiratory"};
 
+    // String array to hold all the info of the choices as the user buys medicine
+    public static String[] currentPurchaseChoices = new String[4];
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle)
+    {
+        // TODO make methods for each thing that goes in here ie combo boxes medicine table and the search function
+        addMedicine_FillTable();
+        addMedicine_StatusCombo();
+        addMedicine_TypeCombo();
+        buyMedicine_TypeCB();
+    }
 
     // region navagation
     public void showDashboard()
@@ -90,16 +110,6 @@ public class Application implements Initializable
 
         addMedicine_table.setItems(addMedicineList);
     }
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle)
-    {
-        // TODO make methods for each thing that goes in here ie combo boxes medicine table and the search function
-        addMedicine_FillTable();
-        addMedicine_StatusCombo();
-        addMedicine_TypeCombo();
-    }
-
 
     /*public void addMedicine_Search()
     {
@@ -243,6 +253,35 @@ public class Application implements Initializable
     // endregion
 
     //region buy medicine
+    public void buyMedicine_TypeCB()
+    {
+        List<String> listS = new ArrayList<>();
+        Collections.addAll(listS, addMedicineType);
+
+        ObservableList listData = FXCollections.observableArrayList(listS);
+        buyTypeSelection.setItems(listData);
+    }
+    public void buyMedicine_ProductCB()
+    {
+        List<String> listS = new ArrayList<>();
+        Collections.addAll(listS, addMedicineStatus);
+
+        ObservableList listData = FXCollections.observableArrayList(listS);
+        buyProduct.setItems(listData);
+    }
+
+
+    public void updateChoices(ActionEvent actionEvent)
+    {
+        System.out.println("yoooo");
+        buyMedicine_ProductCB();
+    }
+
+    public void limitChoices(String[] currentPurchaseChoices)
+    {
+
+    }
+
 
     //endregion
 

@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="261618ae-1dd5-4bc7-9a2e-fc7d69ae4f52" name="Changes" comment="end of day - day 8">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_5_2023_7_38_AM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_5_2023_7_38_AM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pharmacytm/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pharmacytm/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pharmacytm/Application.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pharmacytm/Application.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pharmacytm/Authenication.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pharmacytm/Authenication.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

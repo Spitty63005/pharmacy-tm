@@ -47,7 +47,7 @@
                <children>
                   <AnchorPane fx:id="purchase_purchaseMeds" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="569.0" prefWidth="761.0">
                      <children>
-                        <TableView fx:id="addMedicine_table1" layoutX="-20.0" onMouseClicked="#addMedicine_SelectMedicine" prefHeight="569.0" prefWidth="514.0">
+                        <TableView fx:id="buyMedicine_table" layoutX="-20.0" onMouseClicked="#addMedicine_SelectMedicine" prefHeight="569.0" prefWidth="514.0">
                            <columns>
                               <TableColumn fx:id="med_id1" prefWidth="75.0" text="Med ID" />
                               <TableColumn fx:id="med_brand1" prefWidth="75.0" text="Brand" />
@@ -60,16 +60,22 @@
                         </TableView>
                         <AnchorPane layoutX="504.0" prefHeight="567.0" prefWidth="200.0">
                            <children>
-                              <ChoiceBox layoutX="25.0" layoutY="49.0" prefWidth="150.0" />
-                              <ChoiceBox layoutX="25.0" layoutY="99.0" prefWidth="150.0" />
-                              <ChoiceBox layoutX="25.0" layoutY="148.0" prefWidth="150.0" />
-                              <ChoiceBox layoutX="25.0" layoutY="197.0" prefWidth="150.0" />
+                              <ChoiceBox fx:id="buyTypeSelection" layoutX="25.0" layoutY="49.0" prefWidth="150.0" onAction="#updateChoices"/>
+                              <ChoiceBox fx:id="buyProduct" layoutX="25.0" layoutY="99.0" prefWidth="150.0" onAction="#updateChoices"/>
+                              <ChoiceBox fx:id="buyBrand" layoutX="25.0" layoutY="148.0" prefWidth="150.0" onAction="#updateChoices"/>
+                              <ChoiceBox fx:id="buyID" layoutX="25.0" layoutY="197.0" prefWidth="150.0" onAction="#updateChoices"/>
                               <Label layoutX="25.0" layoutY="32.0" text="Type" />
                               <Label layoutX="25.0" layoutY="82.0" text="Product" />
                               <Label layoutX="25.0" layoutY="131.0" text="Brand" />
                               <Label layoutX="25.0" layoutY="180.0" text="Med ID" />
-                              <Spinner layoutX="100.0" layoutY="248.0" prefHeight="25.0" prefWidth="72.0" />
+                              <Spinner fx:id="buySpinner" layoutX="100.0" layoutY="248.0" prefHeight="25.0" prefWidth="72.0" />
                               <Label layoutX="37.0" layoutY="252.0" text="Quantity" />
+                              <Label fx:id="buyTotal" layoutX="44.0" layoutY="317.0" text="Total: $0.00" />
+                              <Label layoutX="18.0" layoutY="351.0" text="Amount:" />
+                              <TextField fx:id="buyAmountField" layoutX="74.0" layoutY="347.0" prefHeight="25.0" prefWidth="98.0" />
+                              <Label fx:id="buyBalance" layoutX="36.0" layoutY="385.0" text="balance: $0.00" />
+                              <Button layoutX="68.0" layoutY="496.0" mnemonicParsing="false" text="Purchase" />
+                              <Button fx:id="butAddtoCart" layoutX="112.0" layoutY="284.0" mnemonicParsing="false"  text="Add to Cart" />
                            </children></AnchorPane>
                      </children></AnchorPane>
                   <AnchorPane fx:id="dash_dashboard" prefHeight="369.0" prefWidth="700.0" visible="false">
